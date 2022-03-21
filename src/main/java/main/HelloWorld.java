@@ -5,13 +5,18 @@ import util.Input;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        String userInput = Input.getString("Please enter a string");
+        String userInput = Input.getString("Please enter something");
 
-        System.out.println("Is this a number?");
-        System.out.println(StringUtils.isNumeric(userInput));
-        System.out.println("Your input case swapped");
-        System.out.println(StringUtils.swapCase(userInput));
-        System.out.println("Your input reversed");
-        System.out.println(StringUtils.reverse(userInput));
+        System.out.printf("You entered: \"%s\".\n", userInput);
+        if (!StringUtils.isNumeric(userInput)) {
+            System.out.printf("\"%s\" is not a number.\n", userInput);
+        } else {
+            System.out.printf("\"%s\" is a number.\n", userInput);
+        }
+
+        System.out.printf("Flipped Case: \"%s\".\n", StringUtils.swapCase(userInput));
+        System.out.printf("Reversed: \"%s\".\n", StringUtils.reverse(userInput));
+
+
     }
 }
